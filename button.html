@@ -2,10 +2,11 @@
 <html>
     <head>
     	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"/>
         <title>To onlyone</title>
     <style>
         body {
-            margin-top: 200px;
+        	margin-top: 200px;
             text-align:center;
             background-color: #f1ccb8;
         }
@@ -24,12 +25,20 @@
     </head>
     <body>
         <div id="d">
-            <h2>做我女朋友好不好?</h2>
+            <h1>做我女朋友好不好?</h1>
             <input type="button" style="height:80px;width:200px;" onclick="fun()" value="好的" />
             <input type="button" onmouseover="move(this);" onclick="alert('=_=');" value="不行" />
         </div>
     </body>
     <script type="text/javascript" >
+      window.alert = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.alert(name);
+            iframe.parentNode.removeChild(iframe);
+        }
         var height = document.documentElement.clientHeight - 100;    //按钮可能上下移动的距离
         var width = document.documentElement.clientWidth - 40;        //按钮可能左右移动的距离
         function move(obj) {
@@ -38,11 +47,15 @@
             obj.style.left = Math.random() * width + "px";
         }
         function cancel() {
-            alert("你还没选择呢！");
+            alert("你已放弃");
             window.close();
         }
         function fun() {
             alert('晚上去看电影啊');
         }
+        
+       var deviceWidth = document.documentElement.clientWidth;
+       if (deviceWidth >1080) {deviceWidth=1080;}
+       document.documentElement.style.fontSize =deviceWidth/25+"px";
     </script>
 </html>
