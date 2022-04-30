@@ -16,17 +16,14 @@
             width:100px;
             height:40px;
         }
-        big{
-            with:100px;
-            higth=40px;
-        }
+
     </style>
     
     </head>
     <body>
         <div id="d">
-            <h2>做我女朋友好不好</h2>
-            <input type="button" class="big" value="好的" />
+            <h2>做我女朋友好不好?</h2>
+            <input type="button" onclick="fun()" value="好的" />
             <input type="button" onmouseover="move(this);" onclick="alert('=_=');" value="不行" />
         </div>
     </body>
@@ -41,6 +38,9 @@
         function cancel() {
             alert("你已放弃");
             window.close();
+        }
+        function fun() {
+            alert('晚上去看电影啊');
         }
     </script>
 </html>
