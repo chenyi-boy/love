@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+        <title>逃跑按钮</title>
+    <style>
+        body {
+            text-align:center;
+        }
+        #d {
+            margin-left:0 auto;
+            margin-right:0 auto;
+            text-align:center;
+        }
+        input {
+            width:100px;
+            height:40px;
+        }
+    </style>
+    
+    </head>
+    <body>
+        <div id="d">
+            <h2>点不到</h2>
+            <input type="button" onmouseover="move(this);" onclick="alert('=_=');" value="确定" />
+        </div>
+    </body>
+    <script type="text/javascript" >
+        var height = document.documentElement.clientHeight - 100;    //按钮可能上下移动的距离
+        var width = document.documentElement.clientWidth - 40;        //按钮可能左右移动的距离
+        function move(obj) {
+            obj.style.position = "absolute";
+            obj.style.top = Math.random() * height + "px";
+            obj.style.left = Math.random() * width + "px";
+        }
+        function cancel() {
+            alert("你已放弃");
+            window.close();
+        }
+    </script>
+</html>
