@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"/>
+        <title>To onlyone</title>
+    <style>
+        body {
+        	margin-top: 200px;
+            text-align:center;
+            background-color: #f1ccb8;
+        }
+        #d {
+            margin-left:0 auto;
+            margin-right:0 auto;
+            text-align:center;
+        }
+        input {
+            width:100px;
+            height:40px;
+        }
+
+    </style>
+    
+    </head>
+    <body>
+        <div id="d">
+            <h1>可以看看你的照片吗?</h1>
+            <input type="button"  onclick="fun()" value="可以" />
+            <input type="button" onmouseover="move(this);" onclick="alert('=_=');" value="不行" />
+        </div>
+    </body>
+    <script type="text/javascript" >
+    
+        var height = document.documentElement.clientHeight - 100;    //按钮可能上下移动的距离
+        var width = document.documentElement.clientWidth - 40;        //按钮可能左右移动的距离
+        function move(obj) {
+            obj.style.position = "absolute";
+            obj.style.top = Math.random() * height + "px";
+            obj.style.left = Math.random() * width + "px";
+        }
+        function cancel() {
+            alert("你已放弃");
+            window.close();
+        }
+        function fun() {
+            alert('我已经迫不及待了 哈哈哈！');
+        }
+        
+       var deviceWidth = document.documentElement.clientWidth;
+       if (deviceWidth >1080) {deviceWidth=1080;}
+       document.documentElement.style.fontSize =deviceWidth/25+"px";
+    </script>
+</html>
