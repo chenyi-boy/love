@@ -3,7 +3,7 @@
     <head>
     	<meta charset="UTF-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"/>
-        <title>To onlyone</title>
+        <title>To Souler</title>
     <style>
         body {
         	margin-top: 200px;
@@ -31,7 +31,14 @@
         </div>
     </body>
     <script type="text/javascript" >
-    
+        window.alert = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.alert(name);
+            iframe.parentNode.removeChild(iframe);
+        }
         var height = document.documentElement.clientHeight - 100;    //按钮可能上下移动的距离
         var width = document.documentElement.clientWidth - 40;        //按钮可能左右移动的距离
         function move(obj) {
